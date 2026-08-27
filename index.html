@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIYEON'S GROUPS | 韓系質感個人BIO網址</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts: Cormorant Garamond, Playfair Display & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Sans+TC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FAF8F5',
+                            100: '#F5EFE6',
+                            200: '#E8DFC8',
+                            300: '#D5C2B1',
+                            400: '#B8A390',
+                        },
+                        espresso: {
+                            800: '#4A3E3D',
+                            900: '#2E2625',
+                        },
+                        taupe: '#8C7A6B',
+                        terracotta: '#D48C70',
+                        sage: '#8A9A86',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', '"Playfair Display"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #DBC8B6;
+            color: #C6A996;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-image: radial-gradient(#E8DFC8 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+        }
+
+        /* 隱藏原生滾動條但保持滾動 */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* 微漸變陰影 */
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(140, 122, 107, 0.08);
+        }
+
+        /* 編輯器 Modal 捲軸樣式 */
+        .admin-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .admin-scroll::-webkit-scrollbar-thumb {
+            background-color: #D5C2B1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start pb-20 pt-4 px-4 sm:px-6">
+
+    <!-- 主要內容容器（模擬標準一頁式 BIO 幅寬） -->
+    <main class="w-full max-w-md mx-auto space-y-6" id="main-content">
+
+        <!-- 頂部跑馬燈公告 -->
+        <div class="bg-cream-100/90 backdrop-blur border border-cream-200 rounded-full px-4 py-2 flex items-center justify-between text-xs text-taupe soft-shadow">
+            <div class="flex items-center space-x-2 truncate">
+                <span id="display-notice-tag" class="bg-terracotta text-white px-2 py-0.5 rounded-full text-[10px] font-medium flex-shrink-0">Notice</span>
+                <span id="display-notice-text" class="truncate">本月韓系居家選物開團中！滿 $1200 免運 🕊️</span>
+            </div>
+            <button onclick="copyCurrentUrl()" class="ml-2 hover:text-espresso-800 transition-colors flex-shrink-0" title="複製連結">
+                <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+            </button>
+        </div>
+
+        <!-- 區塊一：團購行事曆 -->
+        <section class="bg-white/80 backdrop-blur rounded-3xl p-4 sm:p-5 border border-cream-200 soft-shadow space-y-3">
+            <div class="flex items-center justify-between border-b border-cream-100 pb-2">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="calendar-heart" class="w-4 h-4 text-terracotta"></i>
+                    <h2 class="font-serif italic font-semibold text-lg text-espresso-800 tracking-wide">GROUP BUY CALENDAR</h2>
+                </div>
+                <span id="display-calendar-title" class="text-[11px] text-taupe bg-cream-100 px-2.5 py-1 rounded-full font-medium">2026.10 月份日程</span>
+            </div>
+
+            <!-- 標準月曆 Grid 表格區塊 -->
+            <div class="bg-cream-50/80 rounded-2xl p-3 border border-cream-200/80 space-y-2">
+                <div class="grid grid-cols-7 text-center text-[10px] font-semibold text-taupe tracking-wider py-1 border-b border-cream-200/50">
+                    <span class="text-terracotta/80">SUN</span>
+                    <span>MON</span>
+                    <span>TUE</span>
+                    <span>WED</span>
+                    <span>THU</span>
+                    <span>FRI</span>
+                    <span class="text-sage">SAT</span>
+                </div>
+
+                <!-- 日期網格 -->
+                <div class="grid grid-cols-7 gap-1 text-center text-xs font-sans">
+                    <div class="p-1 text-cream-300 opacity-40 min-h-[42px] flex flex-col items-center justify-start"><span class="text-[10px]">27</span></div>
+                    <div class="p-1 text-cream-300 opacity-40 min-h-[42px] flex flex-col items-center justify-start"><span class="text-[10px]">28</span></div>
+                    <div class="p-1 text-cream-300 opacity-40 min-h-[42px] flex flex-col items-center justify-start"><span class="text-[10px]">29</span></div>
+                    <div class="p-1 text-cream-300 opacity-40 min-h-[42px] flex flex-col items-center justify-start"><span class="text-[10px]">30</span></div>
+
+                    <!-- 10/1 ~ 10/5 香氛 -->
+                    <div class="p-1 bg-terracotta/10 rounded-lg border border-terracotta/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-terracotta/20 transition-colors" onclick="highlightDeal('deal-1')">
+                        <span class="text-[10px] font-medium text-espresso-800">1</span>
+                        <span class="text-[9px] bg-terracotta text-white px-1 py-0.5 rounded leading-none w-full truncate">香氛</span>
+                    </div>
+                    <div class="p-1 bg-terracotta/10 rounded-lg border border-terracotta/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-terracotta/20 transition-colors" onclick="highlightDeal('deal-1')">
+                        <span class="text-[10px] font-medium text-espresso-800">2</span>
+                        <span class="text-[9px] bg-terracotta text-white px-1 py-0.5 rounded leading-none w-full truncate">首發</span>
+                    </div>
+                    <div class="p-1 bg-terracotta/10 rounded-lg border border-terracotta/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-terracotta/20 transition-colors" onclick="highlightDeal('deal-1')">
+                        <span class="text-[10px] font-medium text-sage">3</span>
+                        <span class="text-[9px] bg-terracotta text-white px-1 py-0.5 rounded leading-none w-full truncate">香氛</span>
+                    </div>
+                    <div class="p-1 bg-terracotta/10 rounded-lg border border-terracotta/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-terracotta/20 transition-colors" onclick="highlightDeal('deal-1')">
+                        <span class="text-[10px] font-medium text-terracotta">4</span>
+                        <span class="text-[9px] bg-terracotta text-white px-1 py-0.5 rounded leading-none w-full truncate">香氛</span>
+                    </div>
+                    <div class="p-1 bg-terracotta/10 rounded-lg border border-terracotta/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-terracotta/20 transition-colors" onclick="highlightDeal('deal-1')">
+                        <span class="text-[10px] font-medium text-espresso-800">5</span>
+                        <span class="text-[9px] bg-terracotta/60 text-white px-1 py-0.5 rounded leading-none w-full truncate">結團</span>
+                    </div>
+
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">6</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">7</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">8</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">9</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-sage">10</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-terracotta">11</span></div>
+
+                    <!-- 10/12 - 10/18 積雪草精華 -->
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-espresso-800">12</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">積雪草</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-espresso-800">13</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">精華</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-espresso-800">14</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">精華</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-espresso-800">15</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">熱銷</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-espresso-800">16</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">精華</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-sage">17</span>
+                        <span class="text-[9px] bg-espresso-800 text-white px-1 py-0.5 rounded leading-none w-full truncate">倒數</span>
+                    </div>
+                    <div class="p-1 bg-espresso-800/10 rounded-lg border border-espresso-800/20 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-espresso-800/20 transition-colors" onclick="highlightDeal('deal-2')">
+                        <span class="text-[10px] font-medium text-terracotta">18</span>
+                        <span class="text-[9px] bg-espresso-800/60 text-white px-1 py-0.5 rounded leading-none w-full truncate">結團</span>
+                    </div>
+
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">19</span></div>
+
+                    <!-- 10/20 - 10/25 燕麥奶 -->
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-espresso-800">20</span>
+                        <span class="text-[9px] bg-sage text-white px-1 py-0.5 rounded leading-none w-full truncate">燕麥奶</span>
+                    </div>
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-espresso-800">21</span>
+                        <span class="text-[9px] bg-sage text-white px-1 py-0.5 rounded leading-none w-full truncate">買1送1</span>
+                    </div>
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-espresso-800">22</span>
+                        <span class="text-[9px] bg-sage text-white px-1 py-0.5 rounded leading-none w-full truncate">燕麥奶</span>
+                    </div>
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-espresso-800">23</span>
+                        <span class="text-[9px] bg-sage text-white px-1 py-0.5 rounded leading-none w-full truncate">燕麥奶</span>
+                    </div>
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-sage">24</span>
+                        <span class="text-[9px] bg-sage text-white px-1 py-0.5 rounded leading-none w-full truncate">燕麥奶</span>
+                    </div>
+                    <div class="p-1 bg-sage/15 rounded-lg border border-sage/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-sage/25 transition-colors" onclick="highlightDeal('deal-5')">
+                        <span class="text-[10px] font-medium text-terracotta">25</span>
+                        <span class="text-[9px] bg-sage/60 text-white px-1 py-0.5 rounded leading-none w-full truncate">結團</span>
+                    </div>
+
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">26</span></div>
+                    <div class="p-1 rounded-lg min-h-[44px] flex flex-col items-center justify-start"><span class="text-[10px] text-espresso-800">27</span></div>
+
+                    <!-- 10/28 - 10/31 復古披毯 -->
+                    <div class="p-1 bg-taupe/15 rounded-lg border border-taupe/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-taupe/25 transition-colors" onclick="highlightDeal('deal-8')">
+                        <span class="text-[10px] font-medium text-espresso-800">28</span>
+                        <span class="text-[9px] bg-taupe text-white px-1 py-0.5 rounded leading-none w-full truncate">披毯預告</span>
+                    </div>
+                    <div class="p-1 bg-taupe/15 rounded-lg border border-taupe/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-taupe/25 transition-colors" onclick="highlightDeal('deal-8')">
+                        <span class="text-[10px] font-medium text-espresso-800">29</span>
+                        <span class="text-[9px] bg-taupe text-white px-1 py-0.5 rounded leading-none w-full truncate">披毯開團</span>
+                    </div>
+                    <div class="p-1 bg-taupe/15 rounded-lg border border-taupe/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-taupe/25 transition-colors" onclick="highlightDeal('deal-8')">
+                        <span class="text-[10px] font-medium text-espresso-800">30</span>
+                        <span class="text-[9px] bg-taupe text-white px-1 py-0.5 rounded leading-none w-full truncate">披毯</span>
+                    </div>
+                    <div class="p-1 bg-taupe/15 rounded-lg border border-taupe/30 min-h-[44px] flex flex-col items-center justify-between cursor-pointer hover:bg-taupe/25 transition-colors" onclick="highlightDeal('deal-8')">
+                        <span class="text-[10px] font-medium text-sage">31</span>
+                        <span class="text-[9px] bg-taupe text-white px-1 py-0.5 rounded leading-none w-full truncate">披毯</span>
+                    </div>
+                </div>
+
+                <!-- 圖例標籤 -->
+                <div class="flex items-center justify-center space-x-3 pt-2 text-[10px] text-taupe border-t border-cream-200/50">
+                    <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-terracotta"></span><span>木質香氛</span></span>
+                    <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-espresso-800"></span><span>積雪草精華</span></span>
+                    <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-sage"></span><span>燕麥奶</span></span>
+                    <span class="flex items-center space-x-1"><span class="w-2 h-2 rounded-full bg-taupe"></span><span>復古披毯</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：個人 Profile 簡介 -->
+        <section class="text-center space-y-3 pt-2">
+            <div class="relative w-24 h-24 mx-auto">
+                <img id="display-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400" 
+                     alt="JIYEON KIM" 
+                     class="w-full h-full object-cover rounded-full border-4 border-white soft-shadow">
+                <span class="absolute bottom-1 right-1 w-5 h-5 bg-sage text-white rounded-full flex items-center justify-center text-[10px] border-2 border-white" title="認證創作者">
+                    ✓
+                </span>
+            </div>
+
+            <div>
+                <h1 id="display-name" class="font-serif text-2xl font-semibold tracking-wider text-espresso-800">지연 JIYEON</h1>
+                <p id="display-tagline" class="text-xs text-taupe tracking-widest uppercase mt-0.5">Lifestyle / Home Decor / Beauty Select</p>
+            </div>
+
+            <p id="display-bio" class="text-xs text-espresso-800/80 leading-relaxed px-4 whitespace-pre-line">溫暖簡約的韓系日常 ☕️
+只分享自己親自試用過、真心喜歡的質感好物。</p>
+
+            <!-- 社群快捷連結 -->
+            <div class="flex items-center justify-center space-x-3 pt-1" id="display-socials">
+                <a id="link-ig" href="#" target="_blank" class="w-9 h-9 bg-white border border-cream-200 rounded-full flex items-center justify-center text-espresso-800 hover:bg-cream-100 hover:scale-105 transition-all shadow-sm">
+                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                </a>
+                <a id="link-yt" href="#" target="_blank" class="w-9 h-9 bg-white border border-cream-200 rounded-full flex items-center justify-center text-espresso-800 hover:bg-cream-100 hover:scale-105 transition-all shadow-sm">
+                    <i data-lucide="youtube" class="w-4 h-4"></i>
+                </a>
+                <a id="link-line" href="#" target="_blank" class="w-9 h-9 bg-white border border-cream-200 rounded-full flex items-center justify-center text-espresso-800 hover:bg-cream-100 hover:scale-105 transition-all shadow-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 區塊三：團購連結專區 -->
+        <section class="space-y-3">
+            <div class="flex items-center justify-between px-1">
+                <h2 class="font-serif italic font-semibold text-lg text-espresso-800 flex items-center space-x-2">
+                    <span>ONGOING DEALS</span>
+                    <span class="text-xs font-sans font-normal text-taupe">(開團商品)</span>
+                </h2>
+                <div class="text-[11px] text-terracotta bg-terracotta/10 px-2.5 py-0.5 rounded-full font-medium">
+                    ⚡️ 獨家優惠 65 折起
+                </div>
+            </div>
+
+            <!-- 分類頁籤 -->
+            <div class="flex space-x-2 overflow-x-auto no-scrollbar pb-1 text-xs">
+                <button onclick="filterDeals('all')" class="tab-btn bg-espresso-800 text-white px-3.5 py-1.5 rounded-full font-medium flex-shrink-0 transition-colors">
+                    全部 All (10)
+                </button>
+                <button onclick="filterDeals('active')" class="tab-btn bg-white border border-cream-200 text-taupe px-3.5 py-1.5 rounded-full font-medium flex-shrink-0 hover:bg-cream-50 transition-colors">
+                    🔥 開團中 (4)
+                </button>
+                <button onclick="filterDeals('upcoming')" class="tab-btn bg-white border border-cream-200 text-taupe px-3.5 py-1.5 rounded-full font-medium flex-shrink-0 hover:bg-cream-50 transition-colors">
+                    🗓 預告中 (6)
+                </button>
+            </div>
+
+            <!-- 團購卡片列表容器 -->
+            <div id="deals-container" class="space-y-3">
+                <!-- 🔥 開團中商品 1 -->
+                <div id="deal-1" class="deal-card active bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300">
+                    <div class="flex space-x-3.5">
+                        <img id="deal1-img" src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=300" 
+                             alt="香氛組" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal1-status" class="text-[10px] font-medium bg-terracotta/15 text-terracotta px-2 py-0.5 rounded-md">
+                                        🔥 開團中 (~10/18 23:59)
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">68折優惠</span>
+                                </div>
+                                <h3 id="deal1-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【首爾同款】韓系天然木質調極簡擴香組</h3>
+                                <p id="deal1-desc" class="text-[11px] text-taupe truncate mt-0.5">放鬆沉靜香味，隨組合贈專屬擴香木棒 🪴</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-1')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>詳細內容</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal1-link" href="https://example.com" target="_blank" class="bg-espresso-800 hover:bg-espresso-900 text-white text-xs px-3.5 py-1.5 rounded-xl font-medium flex items-center space-x-1 transition-all">
+                                    <span>前往下單</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-1" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 獨家團購價：$880（原價 $1,280）</p>
+                        <p>▫️ 滿 $1,200 即享免運優惠</p>
+                    </div>
+                </div>
+
+                <!-- 🔥 開團中商品 2 -->
+                <div id="deal-2" class="deal-card active bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300">
+                    <div class="flex space-x-3.5">
+                        <img id="deal2-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=300" 
+                             alt="護膚組" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal2-status" class="text-[10px] font-medium bg-terracotta/15 text-terracotta px-2 py-0.5 rounded-md">
+                                        🔥 倒數 2 天 (熱銷補貨)
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">買二送一</span>
+                                </div>
+                                <h3 id="deal2-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【秋冬水光肌】積雪草深層修護保濕精華</h3>
+                                <p id="deal2-desc" class="text-[11px] text-taupe truncate mt-0.5">換季救星，敏弱肌適用，韓妞水光秘密</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-2')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>詳細內容</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal2-link" href="https://example.com" target="_blank" class="bg-espresso-800 hover:bg-espresso-900 text-white text-xs px-3.5 py-1.5 rounded-xl font-medium flex items-center space-x-1 transition-all">
+                                    <span>前往下單</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-2" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 組合價：$1,350（平均單瓶只要 $450）</p>
+                    </div>
+                </div>
+
+                <!-- 🔥 開團中商品 3 -->
+                <div id="deal-3" class="deal-card active bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300">
+                    <div class="flex space-x-3.5">
+                        <img id="deal3-img" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=300" 
+                             alt="彩妝組" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal3-status" class="text-[10px] font-medium bg-terracotta/15 text-terracotta px-2 py-0.5 rounded-md">
+                                        🔥 新品特惠 (限量 100 組)
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">75折優惠</span>
+                                </div>
+                                <h3 id="deal3-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【韓系輕透】裸感光澤氣墊粉餅</h3>
+                                <p id="deal3-desc" class="text-[11px] text-taupe truncate mt-0.5">高保濕水光感，打造零毛孔韓妞肌 💫</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-3')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>詳細內容</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal3-link" href="https://example.com" target="_blank" class="bg-espresso-800 hover:bg-espresso-900 text-white text-xs px-3.5 py-1.5 rounded-xl font-medium flex items-center space-x-1 transition-all">
+                                    <span>前往下單</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-3" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 團購優惠價：$680（原價 $900）</p>
+                        <p>▫️ 附贈備用補充包 1 入</p>
+                    </div>
+                </div>
+
+                <!-- 🔥 開團中商品 4 -->
+                <div id="deal-4" class="deal-card active bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300">
+                    <div class="flex space-x-3.5">
+                        <img id="deal4-img" src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&q=80&w=300" 
+                             alt="洗髮精" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal4-status" class="text-[10px] font-medium bg-terracotta/15 text-terracotta px-2 py-0.5 rounded-md">
+                                        🔥 熱銷爆款 (現貨供應)
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">買二送一</span>
+                                </div>
+                                <h3 id="deal4-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【奢華頭皮SPA】韓國草本強健髮根洗髮精</h3>
+                                <p id="deal4-desc" class="text-[11px] text-taupe truncate mt-0.5">深層清潔洗淨，調理頭皮健康，蓬鬆感十足 🌿</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-4')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>詳細內容</span>
+                                    <i data-lucide="chevron-down" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal4-link" href="https://example.com" target="_blank" class="bg-espresso-800 hover:bg-espresso-900 text-white text-xs px-3.5 py-1.5 rounded-xl font-medium flex items-center space-x-1 transition-all">
+                                    <span>前往下單</span>
+                                    <i data-lucide="external-link" class="w-3 h-3"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-4" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 組合價：$990（平均單瓶 $330）</p>
+                    </div>
+                </div>
+
+                <!-- 🗓 預告中商品 1 ~ 6 -->
+                <div id="deal-5" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal5-img" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=300" 
+                             alt="燕麥奶" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal5-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 10/20 12:00 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">買一送一</span>
+                                </div>
+                                <h3 id="deal5-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【北歐原裝】無糖濃醇燕麥奶 1000ml</h3>
+                                <p id="deal5-desc" class="text-[11px] text-taupe truncate mt-0.5">搭配拿鐵極順口，團購限定箱購超劃算 🥛</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-5')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal5-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-5" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 開團時間：10/20 ~ 10/25 限時 5 天</p>
+                    </div>
+                </div>
+
+                <div id="deal-6" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal6-img" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=300" 
+                             alt="馬克杯" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal6-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 10/22 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">預購優惠</span>
+                                </div>
+                                <h3 id="deal6-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【秋季必備】極簡微甜奶油風陶瓷馬克杯組</h3>
+                                <p id="deal6-desc" class="text-[11px] text-taupe truncate mt-0.5">手工打磨溫潤質感，居家早午餐必備 ☕️</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-6')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal6-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-6" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 預購優惠金額組合價：$490</p>
+                    </div>
+                </div>
+
+                <div id="deal-7" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal7-img" src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&q=80&w=300" 
+                             alt="唇膜" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal7-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 10/25 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">買二送一</span>
+                                </div>
+                                <h3 id="deal7-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【極致修護】韓國膠原蛋白夜間修護唇膜</h3>
+                                <p id="deal7-desc" class="text-[11px] text-taupe truncate mt-0.5">撫平唇紋，睡眠期間深層滋養淡化暗沉 💄</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-7')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal7-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-7" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 團購價：$390 / 入</p>
+                    </div>
+                </div>
+
+                <div id="deal-8" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal8-img" src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&q=80&w=300" 
+                             alt="披毯" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal8-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 10/28 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">7折優惠</span>
+                                </div>
+                                <h3 id="deal8-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【療癒居家】法式復古提花棉質披毯</h3>
+                                <p id="deal8-desc" class="text-[11px] text-taupe truncate mt-0.5">多功能沙發毯、冷氣毯，居家溫馨感加分 🛋️</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-8')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal8-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-8" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 預購特惠價：$720</p>
+                    </div>
+                </div>
+
+                <div id="deal-9" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal9-img" src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&q=80&w=300" 
+                             alt="手沖壺" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal9-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 11/01 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">早鳥特惠</span>
+                                </div>
+                                <h3 id="deal9-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【質感選品】韓系不鏽鋼手沖咖啡保溫壺</h3>
+                                <p id="deal9-desc" class="text-[11px] text-taupe truncate mt-0.5">長效保溫保冷，極簡造型桌上美觀裝飾 ☕️</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-9')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal9-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-9" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 早鳥優惠價：$850</p>
+                    </div>
+                </div>
+
+                <div id="deal-10" class="deal-card upcoming bg-white rounded-2xl p-3.5 border border-cream-200 soft-shadow hover:border-cream-300 transition-all duration-300 opacity-95">
+                    <div class="flex space-x-3.5">
+                        <img id="deal10-img" src="https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?auto=format&fit=crop&q=80&w=300" 
+                             alt="圍巾" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 border border-cream-100">
+                        <div class="flex-1 min-w-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between">
+                                    <span id="deal10-status" class="text-[10px] font-medium bg-sage/20 text-sage px-2 py-0.5 rounded-md">
+                                        🗓 預告 11/05 開團
+                                    </span>
+                                    <span class="text-[11px] text-taupe font-serif italic">冬季首發</span>
+                                </div>
+                                <h3 id="deal10-title" class="text-xs font-semibold text-espresso-800 truncate mt-1">【冬日必備】羊毛混紡蓬鬆舒適圍巾</h3>
+                                <p id="deal10-desc" class="text-[11px] text-taupe truncate mt-0.5">親膚不刺癢，親自挑選大地系絕美色彩 🧣</p>
+                            </div>
+                            <div class="flex items-center justify-between pt-2">
+                                <button onclick="toggleDetails('detail-10')" class="text-[11px] text-taupe hover:text-espresso-800 flex items-center space-x-1">
+                                    <span>開團通知</span>
+                                    <i data-lucide="bell" class="w-3 h-3"></i>
+                                </button>
+                                <a id="deal10-link" href="https://example.com" target="_blank" class="bg-cream-100 text-espresso-800 hover:bg-cream-200 text-xs px-3.5 py-1.5 rounded-xl font-medium transition-all flex items-center space-x-1">
+                                    <span>設定提醒 🔔</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="detail-10" class="hidden mt-3 pt-3 border-t border-cream-100 text-xs text-taupe space-y-1 bg-cream-50/50 p-2.5 rounded-xl">
+                        <p>▫️ 首發優惠價：$580</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊四：相片牆 (Visual Favorites) -->
+        <section class="space-y-3">
+            <h2 class="font-serif italic font-semibold text-lg text-espresso-800 flex items-center space-x-2">
+                <span>VISUAL FAVORITES</span>
+                <span class="text-xs font-sans font-normal text-taupe">(精選靈感照片)</span>
+            </h2>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-cream-100 cursor-pointer" onclick="openLightbox('gallery-1')">
+                    <img id="gallery-1" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=500" 
+                         alt="Life Style 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-cream-100 cursor-pointer" onclick="openLightbox('gallery-2')">
+                    <img id="gallery-2" src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=500" 
+                         alt="Life Style 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-cream-100 cursor-pointer" onclick="openLightbox('gallery-3')">
+                    <img id="gallery-3" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=500" 
+                         alt="Life Style 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-square bg-cream-100 cursor-pointer" onclick="openLightbox('gallery-4')">
+                    <img id="gallery-4" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=500" 
+                         alt="Life Style 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊五：專屬 VIP 社群與常見問題 -->
+        <section class="space-y-3 pt-2">
+            <a id="link-vip-group" href="https://line.me" target="_blank" class="block bg-gradient-to-r from-cream-100 via-white to-cream-100 border border-cream-200 p-4 rounded-2xl soft-shadow hover:shadow-md transition-all">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-[#06C755]/10 text-[#06C755] flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="message-square" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xs font-semibold text-espresso-800">加入 Line VIP 團購私密群</h3>
+                            <p class="text-[11px] text-taupe mt-0.5">搶先拿折價券、抽免費新品試用</p>
+                        </div>
+                    </div>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-taupe"></i>
+                </div>
+            </a>
+
+            <!-- FAQ 問答 -->
+            <div class="bg-white/80 backdrop-blur rounded-2xl p-4 border border-cream-200 soft-shadow space-y-2">
+                <h3 class="text-xs font-semibold text-espresso-800 mb-2 flex items-center space-x-1.5">
+                    <i data-lucide="help-circle" class="w-3.5 h-3.5 text-terracotta"></i>
+                    <span>團購常見問題 FAQ</span>
+                </h3>
+
+                <div class="border-b border-cream-100 pb-2">
+                    <button onclick="toggleDetails('faq-1')" class="w-full flex justify-between items-center text-left text-xs text-espresso-800 py-1">
+                        <span>下單後多久發貨？</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-taupe"></i>
+                    </button>
+                    <p id="faq-1" class="hidden text-[11px] text-taupe mt-1 leading-relaxed">
+                        現貨商品下單後 2-3 個工作天出貨；預購商品約 7-14 個工作天出貨。
+                    </p>
+                </div>
+
+                <div>
+                    <button onclick="toggleDetails('faq-2')" class="w-full flex justify-between items-center text-left text-xs text-espresso-800 py-1">
+                        <span>支援哪些付款方式？</span>
+                        <i data-lucide="chevron-down" class="w-3 h-3 text-taupe"></i>
+                    </button>
+                    <p id="faq-2" class="hidden text-[11px] text-taupe mt-1 leading-relaxed">
+                        支援信用卡刷卡、ATM 轉帳以及超商取貨付款（視個別廠商設定而定）。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 頁尾 -->
+        <footer class="text-center text-[11px] text-taupe pt-6 space-y-2 relative">
+            <p class="font-serif italic text-xs text-espresso-800">Created with Warmth & Care</p>
+            <p>© 2026 JIYEON. All Rights Reserved.</p>
+        </footer>
+
+    </main>
+
+    <!-- 右下角管理員懸浮編輯按鈕 -->
+    <button onclick="openAdminAuth()" class="fixed bottom-4 right-4 bg-espresso-800 text-white p-3 rounded-full shadow-xl hover:scale-110 active:scale-95 transition-all z-40 flex items-center justify-center" title="後台編輯模式">
+        <i data-lucide="settings" class="w-5 h-5"></i>
+    </button>
+
+    <!-- 管理員密碼驗證 Modal -->
+    <div id="admin-auth-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-5 max-w-xs w-full shadow-2xl space-y-4 border border-cream-200">
+            <div class="text-center space-y-1">
+                <div class="w-10 h-10 bg-cream-100 rounded-full flex items-center justify-center mx-auto text-espresso-800">
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-semibold text-sm text-espresso-800">後台管理員登入</h3>
+                <p class="text-[11px] text-taupe">請輸入編輯密碼（預設：1234）</p>
+            </div>
+            <input type="password" id="admin-password-input" placeholder="請輸入密碼" class="w-full text-xs px-3 py-2 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+            <div class="flex space-x-2">
+                <button onclick="closeAdminAuth()" class="w-1/2 py-2 text-xs bg-cream-100 text-espresso-800 rounded-xl font-medium">取消</button>
+                <button onclick="verifyAdminPassword()" class="w-1/2 py-2 text-xs bg-espresso-800 text-white rounded-xl font-medium hover:bg-espresso-900 transition-colors">登入編輯</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 後台主編輯 Drawer / Modal -->
+    <div id="admin-editor-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden border border-cream-200">
+            
+            <!-- Drawer 頁頭 -->
+            <div class="p-4 bg-cream-50 border-b border-cream-200 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="edit-3" class="w-4 h-4 text-terracotta"></i>
+                    <h2 class="font-semibold text-sm text-espresso-800">頁面內容編輯後台</h2>
+                </div>
+                <button onclick="closeAdminEditor()" class="text-taupe hover:text-espresso-800 p-1">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- 分頁 Tab 按鈕 -->
+            <div class="flex border-b border-cream-100 text-xs bg-white px-2 pt-2 space-x-1 overflow-x-auto no-scrollbar">
+                <button onclick="switchAdminTab('tab-profile')" id="btn-tab-profile" class="tab-admin-btn px-3 py-2 border-b-2 border-espresso-800 font-semibold text-espresso-800">
+                    👤 個人檔案
+                </button>
+                <button onclick="switchAdminTab('tab-notice')" id="btn-tab-notice" class="tab-admin-btn px-3 py-2 border-b-2 border-transparent text-taupe hover:text-espresso-800">
+                    📢 公告與行事曆
+                </button>
+                <button onclick="switchAdminTab('tab-deals')" id="btn-tab-deals" class="tab-admin-btn px-3 py-2 border-b-2 border-transparent text-taupe hover:text-espresso-800">
+                    🛍️ 團購商品
+                </button>
+                <button onclick="switchAdminTab('tab-gallery')" id="btn-tab-gallery" class="tab-admin-btn px-3 py-2 border-b-2 border-transparent text-taupe hover:text-espresso-800">
+                    📷 相片牆
+                </button>
+            </div>
+
+            <!-- 編輯內容區域 -->
+            <div class="p-4 overflow-y-auto admin-scroll flex-1 space-y-4 text-xs">
+
+                <!-- Tab 1: 個人檔案 -->
+                <div id="tab-profile" class="admin-tab-content space-y-3">
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">個人顯示名稱</label>
+                        <input type="text" id="edit-name" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">英文副標題 / 標籤</label>
+                        <input type="text" id="edit-tagline" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">個人簡介內容</label>
+                        <textarea id="edit-bio" rows="3" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800"></textarea>
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">頭像圖片網址 (URL)</label>
+                        <input type="text" id="edit-avatar" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                    <div class="pt-2 border-t border-cream-100 space-y-2">
+                        <label class="block font-medium text-espresso-800">社群連結設定</label>
+                        <input type="text" id="edit-ig" placeholder="Instagram 網址" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-yt" placeholder="YouTube 網址" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-line" placeholder="LINE 官方/社群 網址" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                </div>
+
+                <!-- Tab 2: 公告與行事曆 -->
+                <div id="tab-notice" class="admin-tab-content hidden space-y-3">
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">跑馬燈告示標籤</label>
+                        <input type="text" id="edit-notice-tag" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">跑馬燈告示文字內容</label>
+                        <input type="text" id="edit-notice-text" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">團購月曆標題文字</label>
+                        <input type="text" id="edit-calendar-title" class="w-full p-2.5 rounded-xl border border-cream-200 focus:outline-none focus:border-espresso-800">
+                    </div>
+                </div>
+
+                <!-- Tab 3: 團購商品編輯區 -->
+                <div id="tab-deals" class="admin-tab-content hidden space-y-4">
+                    <div class="bg-terracotta/10 p-2.5 rounded-xl border border-terracotta/20 text-terracotta font-semibold text-xs">
+                        🔥 開團中商品設定（1 ~ 4）
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-espresso-800">商品 1 (deal-1)</span>
+                        <input type="text" id="edit-deal1-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal1-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal1-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal1-link" placeholder="下單連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal1-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-espresso-800">商品 2 (deal-2)</span>
+                        <input type="text" id="edit-deal2-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal2-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal2-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal2-link" placeholder="下單連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal2-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-espresso-800">商品 3 (deal-3)</span>
+                        <input type="text" id="edit-deal3-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal3-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal3-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal3-link" placeholder="下單連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal3-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-espresso-800">商品 4 (deal-4)</span>
+                        <input type="text" id="edit-deal4-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal4-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal4-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal4-link" placeholder="下單連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal4-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="bg-sage/20 p-2.5 rounded-xl border border-sage/30 text-sage font-semibold text-xs mt-4">
+                        🗓 預告中商品設定（5 ~ 10）
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 1 (deal-5)</span>
+                        <input type="text" id="edit-deal5-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal5-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal5-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal5-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal5-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 2 (deal-6)</span>
+                        <input type="text" id="edit-deal6-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal6-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal6-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal6-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal6-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 3 (deal-7)</span>
+                        <input type="text" id="edit-deal7-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal7-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal7-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal7-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal7-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 4 (deal-8)</span>
+                        <input type="text" id="edit-deal8-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal8-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal8-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal8-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal8-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 5 (deal-9)</span>
+                        <input type="text" id="edit-deal9-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal9-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal9-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal9-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal9-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+
+                    <div class="p-3 bg-cream-50 rounded-2xl border border-cream-200 space-y-2">
+                        <span class="font-semibold text-sage">預告 6 (deal-10)</span>
+                        <input type="text" id="edit-deal10-title" placeholder="商品名稱" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal10-desc" placeholder="簡短描述" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal10-status" placeholder="狀態標籤" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal10-link" placeholder="提醒/詳情連結 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                        <input type="text" id="edit-deal10-img" placeholder="商品圖片 URL" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                </div>
+
+                <!-- Tab 4: 相片牆 -->
+                <div id="tab-gallery" class="admin-tab-content hidden space-y-3">
+                    <p class="text-taupe">替換相片牆 (Visual Favorites) 的 4 張圖片網址：</p>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">相片 1 網址 (URL)</label>
+                        <input type="text" id="edit-g1" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">相片 2 網址 (URL)</label>
+                        <input type="text" id="edit-g2" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">相片 3 網址 (URL)</label>
+                        <input type="text" id="edit-g3" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                    <div>
+                        <label class="block font-medium text-espresso-800 mb-1">相片 4 網址 (URL)</label>
+                        <input type="text" id="edit-g4" class="w-full p-2 rounded-xl border border-cream-200">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Drawer 頁尾操作按鈕 -->
+            <div class="p-4 bg-cream-50 border-t border-cream-200 flex items-center justify-between space-x-2">
+                <button onclick="exportUpdatedHtml()" class="bg-sage hover:bg-sage/90 text-white px-3 py-2 rounded-xl font-medium text-xs flex items-center space-x-1 transition-all" title="下載即時修改好的 index.html">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>📥 匯出 index.html</span>
+                </button>
+                <div class="flex space-x-2">
+                    <button onclick="closeAdminEditor()" class="px-3 py-2 text-taupe hover:text-espresso-800">取消</button>
+                    <button onclick="saveAdminChanges()" class="bg-espresso-800 hover:bg-espresso-900 text-white px-4 py-2 rounded-xl font-medium transition-all">
+                        💾 儲存變更
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lightbox 圖片大圖預覽 Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-lg w-full bg-transparent rounded-2xl overflow-hidden" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-3 right-3 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Enlarged View" class="w-full h-auto max-h-[85vh] object-contain rounded-xl">
+        </div>
+    </div>
+
+    <!-- Toast 簡短訊息提示 -->
+    <div id="toast" class="fixed bottom-6 bg-espresso-800 text-white text-xs px-4 py-2.5 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0 z-50 flex items-center space-x-2">
+        <i data-lucide="check-circle-2" class="w-4 h-4 text-sage"></i>
+        <span id="toast-msg">提示訊息</span>
+    </div>
+
+    <script>
+        // 初始化 Lucide 圖示
+        lucide.createIcons();
+
+        // 開啟管理員登入 Modal
+        function openAdminAuth() {
+            document.getElementById('admin-auth-modal').classList.remove('hidden');
+            document.getElementById('admin-password-input').focus();
+        }
+
+        function closeAdminAuth() {
+            document.getElementById('admin-auth-modal').classList.add('hidden');
+        }
+
+        // 驗證密碼
+        function verifyAdminPassword() {
+            const pwd = document.getElementById('admin-password-input').value;
+            if (pwd === '1234') {
+                closeAdminAuth();
+                openAdminEditor();
+            } else {
+                showToast('密碼錯誤！請再試一次');
+            }
+        }
+
+        // 開啟管理員編輯器並帶入目前資料
+        function openAdminEditor() {
+            populateAdminInputs();
+            document.getElementById('admin-editor-modal').classList.remove('hidden');
+        }
+
+        function closeAdminEditor() {
+            document.getElementById('admin-editor-modal').classList.add('hidden');
+        }
+
+        // 切換編輯頁籤
+        function switchAdminTab(tabId) {
+            document.querySelectorAll('.admin-tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-admin-btn').forEach(btn => {
+                btn.classList.remove('border-espresso-800', 'font-semibold', 'text-espresso-800');
+                btn.classList.add('border-transparent', 'text-taupe');
+            });
+
+            document.getElementById(tabId).classList.remove('hidden');
+            const targetBtn = document.getElementById('btn-' + tabId);
+            if (targetBtn) {
+                targetBtn.classList.add('border-espresso-800', 'font-semibold', 'text-espresso-800');
+                targetBtn.classList.remove('border-transparent', 'text-taupe');
+            }
+        }
+
+        // 安全取得/設定 DOM 值
+        function getSafeVal(id, attr = 'innerText') {
+            const el = document.getElementById(id);
+            if (!el) return '';
+            return attr === 'src' ? el.src : (attr === 'href' ? el.getAttribute('href') : el.innerText);
+        }
+
+        function setSafeVal(id, val, attr = 'innerText') {
+            const el = document.getElementById(id);
+            if (!el || val === undefined) return;
+            if (attr === 'src') el.src = val;
+            else if (attr === 'href') el.href = val;
+            else el.innerText = val;
+        }
+
+        function setSafeInput(inputId, val) {
+            const input = document.getElementById(inputId);
+            if (input && val !== undefined) input.value = val;
+        }
+
+        function getInputValue(id) {
+            const el = document.getElementById(id);
+            return el ? el.value : '';
+        }
+
+        // 帶入現有 DOM 的資料至編輯欄位中
+        function populateAdminInputs() {
+            setSafeInput('edit-name', getSafeVal('display-name'));
+            setSafeInput('edit-tagline', getSafeVal('display-tagline'));
+            setSafeInput('edit-bio', getSafeVal('display-bio'));
+            setSafeInput('edit-avatar', getSafeVal('display-avatar', 'src'));
+
+            setSafeInput('edit-notice-tag', getSafeVal('display-notice-tag'));
+            setSafeInput('edit-notice-text', getSafeVal('display-notice-text'));
+            setSafeInput('edit-calendar-title', getSafeVal('display-calendar-title'));
+
+            setSafeInput('edit-ig', getSafeVal('link-ig', 'href'));
+            setSafeInput('edit-yt', getSafeVal('link-yt', 'href'));
+            setSafeInput('edit-line', getSafeVal('link-line', 'href'));
+
+            for (let i = 1; i <= 10; i++) {
+                setSafeInput(`edit-deal${i}-title`, getSafeVal(`deal${i}-title`));
+                setSafeInput(`edit-deal${i}-desc`, getSafeVal(`deal${i}-desc`));
+                setSafeInput(`edit-deal${i}-status`, getSafeVal(`deal${i}-status`));
+                setSafeInput(`edit-deal${i}-link`, getSafeVal(`deal${i}-link`, 'href'));
+                setSafeInput(`edit-deal${i}-img`, getSafeVal(`deal${i}-img`, 'src'));
+            }
+
+            for (let i = 1; i <= 4; i++) {
+                setSafeInput(`edit-g${i}`, getSafeVal(`gallery-${i}`, 'src'));
+            }
+        }
+
+        // 儲存變更至前端畫面
+        function saveAdminChanges() {
+            setSafeVal('display-name', getInputValue('edit-name'));
+            setSafeVal('display-tagline', getInputValue('edit-tagline'));
+            setSafeVal('display-bio', getInputValue('edit-bio'));
+            setSafeVal('display-avatar', getInputValue('edit-avatar'), 'src');
+
+            setSafeVal('display-notice-tag', getInputValue('edit-notice-tag'));
+            setSafeVal('display-notice-text', getInputValue('edit-notice-text'));
+            setSafeVal('display-calendar-title', getInputValue('edit-calendar-title'));
+
+            if(getInputValue('edit-ig')) setSafeVal('link-ig', getInputValue('edit-ig'), 'href');
+            if(getInputValue('edit-yt')) setSafeVal('link-yt', getInputValue('edit-yt'), 'href');
+            if(getInputValue('edit-line')) setSafeVal('link-line', getInputValue('edit-line'), 'href');
+
+            for (let i = 1; i <= 10; i++) {
+                setSafeVal(`deal${i}-title`, getInputValue(`edit-deal${i}-title`));
+                setSafeVal(`deal${i}-desc`, getInputValue(`edit-deal${i}-desc`));
+                setSafeVal(`deal${i}-status`, getInputValue(`edit-deal${i}-status`));
+                setSafeVal(`deal${i}-link`, getInputValue(`edit-deal${i}-link`), 'href');
+                setSafeVal(`deal${i}-img`, getInputValue(`edit-deal${i}-img`), 'src');
+            }
+
+            for (let i = 1; i <= 4; i++) {
+                if(getInputValue(`edit-g${i}`)) setSafeVal(`gallery-${i}`, getInputValue(`edit-g${i}`), 'src');
+            }
+
+            lucide.createIcons();
+            closeAdminEditor();
+            showToast('已成功儲存並更新頁面！');
+        }
+
+        // 匯出包含最新修改內容的整份 index.html 檔案
+        function exportUpdatedHtml() {
+            saveAdminChanges();
+            const fullDocumentHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const blob = new Blob([fullDocumentHtml], { type: 'text/html;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'index.html';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showToast('已開始下載最新 index.html！');
+        }
+
+        // 點擊月曆高亮對應團購卡片
+        function highlightDeal(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                card.classList.add('ring-2', 'ring-terracotta', 'scale-[1.02]');
+                setTimeout(() => {
+                    card.classList.remove('ring-2', 'ring-terracotta', 'scale-[1.02]');
+                }, 1600);
+            }
+        }
+
+        // 圖片 Preview Modal
+        function openLightbox(imgId) {
+            const el = document.getElementById(imgId);
+            if (!el) return;
+            document.getElementById('lightbox-img').src = el.src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // 切換詳細內容顯示 / 隱藏
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            el.classList.toggle('hidden');
+        }
+
+        // 複製當前網址
+        function copyCurrentUrl() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast('網址已成功複製到剪貼簿！');
+        }
+
+        // 顯示 Toast 提示
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // 團購商品頁籤分類篩選
+        function filterDeals(category) {
+            const cards = document.querySelectorAll('.deal-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-espresso-800', 'text-white');
+                btn.classList.add('bg-white', 'text-taupe');
+            });
+            if (event && event.target) {
+                event.target.classList.remove('bg-white', 'text-taupe');
+                event.target.classList.add('bg-espresso-800', 'text-white');
+            }
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else if (category === 'active' && card.classList.contains('active')) {
+                    card.style.display = 'block';
+                } else if (category === 'upcoming' && card.classList.contains('upcoming')) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
